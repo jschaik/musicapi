@@ -1,6 +1,8 @@
 let express = require('express');
 let musicRouter = express.Router();
 
+//maak gebruik van comments bij elke functie of declaratie
+
 let routes = function (Album) {
     let musicController = require('../Controllers/musicController.js')(Album);
 
@@ -96,6 +98,8 @@ let routes = function (Album) {
                 }
             });
         })
+    
+    //kan de delete niet in een ander bestand als class? Dan heb je namelijk OOP gebruikt.
         .delete(function (req, res) {
             req.album.remove(function (err) {
                 if (err) {
